@@ -1,0 +1,11 @@
+#/bin/sh
+ifconfig can0 down
+ip link set can0 type can bitrate 250000
+#ip link set mxcan0 type can phase-seg1 14 phase-seg2 3 prop-seg 1 sjw 2 tq 136 #ESD CAN200 tested
+#ip link set mxcan0 type can phase-seg1 2 phase-seg2 2 prop-seg 3 sjw 1 tq 125
+ifconfig can0 up
+#
+ifconfig can1 down
+ip link set can1 type can bitrate 250000
+#ip link set mxcan1 type can phase-seg1 2 phase-seg2 2 prop-seg 3 sjw 1 tq 250
+ifconfig can1 up

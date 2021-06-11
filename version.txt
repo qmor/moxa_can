@@ -1,0 +1,27 @@
+
+Product:    Moxa CAN/UPCI/PCIe Family
+Versionr:   1.0.1
+Date:       01/16/2014
+Company:    Moxa Inc.
+
+Support Platform:
+-----------------
+Linux Kernel 2.6.31 or newer (x86/x64)
+Linux Kernel 3.x (x86/x64)
+
+Supported Moxa Product:
+------------------------
+CP-602E-I
+CP-602U-I
+CB-602I
+
+
+Release Note:
+--------------
+Ver1.0.1 Build 14011610
+1. Imporve: Support Linux Kernel 3.11.
+
+Ver1.0 Build 12102911
+1. Newly released.
+
+-END-

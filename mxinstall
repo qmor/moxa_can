@@ -1,0 +1,41 @@
+#!/bin/sh
+###############################################################################
+# Program:
+# 		MOXA Linux driver installer
+#	
+# History:
+# 2012/07/31
+#
+# Author:
+# Jason Chen 
+#
+# Discription:
+# The script install and load the MOXA Linux driver.
+#
+###############################################################################
+
+TARGET_DRIVER1=mxcandrv
+MXVER=1.0
+rmmod mxcandrv
+rmmod mxsja1000
+rmmod mxcan_dev
+if lsmod | grep -q $TARGET_DRIVER1 ; then
+	echo "Found $TARGET_DRIVER1 in system..."
+	echo "Unloading $TARGET_DRIVER1..."
+	rmmod $TARGET_DRIVER1
+	echo "Unload $TARGET_DRIVER1 successfully."
+	echo ""
+fi
+
+if make install ; then
+	echo ""
+	echo "Loading driver..."
+	modprobe $TARGET_DRIVER1
+	echo "**********************************************************************"
+	echo " MOXA CAN Family driver ver $MXVER loaded successfully."
+	echo "**********************************************************************"
+	#ifrename -i mxcan0 -n can0
+	#ifrename -i mxcan1 -n can1
+	sh setup_can
+fi
+exit 0
